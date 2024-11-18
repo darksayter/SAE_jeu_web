@@ -1,0 +1,42 @@
+# Répertoire des dépendances installées par Composer
+/vendor/
+
+# Cache, logs, et sessions
+/var/cache/
+/var/log/
+/var/sessions/
+
+# Configuration des environnements locaux
+/.env.local
+/.env.local.php
+/.env.test.local
+
+# Fichiers générés par Symfony CLI
+/.symfony/*.gz
+
+# Paramètres spécifiques (par exemple, la clé secrète)
+/config/secrets/prod/prod.decrypt.private.php
+
+# Paramètres d'utilisateur
+/.idea/
+/.vscode/
+*.swp
+*.swo
+*.bak
+
+# Fichiers générés par PHPUnit
+/phpunit.result.cache
+
+# Répertoires générés par les outils de build
+/build/
+
+# Assets compilés (si applicable, par exemple avec Webpack Encore)
+/public/build/
+/public/bundles/
+
+# Autres fichiers temporaires
+/.phpunit.result.cache
+/node_modules/
+
+# Fichiers de logs et de debugging
+*.log
