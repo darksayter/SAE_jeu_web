@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compilateur d'algorithmes d'image</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Simple style pour afficher l'exemple de code */
+        #exampleCode {
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 15px;
+            width: 100%;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: pre-wrap; /* Assure que le texte reste bien en format */
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Modificateur d'Image</h1>
+        <input type="file" id="imageInput" accept="image/*" />
+        <canvas id="imageCanvas"></canvas>
+        <textarea id="codeInput" placeholder="Écrivez votre algorithme ici..."></textarea>
+        
+        <!-- Zone de code exemple -->
+        <div>
+            <h3>Exemple de Code :</h3>
+            <div id="exampleCode">
+                for (let i = 0; i < pixels.length; i += 4) {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;pixels[i] = 255 - pixels[i]; &nbsp;&nbsp;&nbsp;&nbsp;// Red<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;pixels[i + 1] = 255 - pixels[i + 1]; &nbsp;&nbsp;&nbsp;&nbsp;// Green<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;pixels[i + 2] = 255 - pixels[i + 2]; &nbsp;&nbsp;&nbsp;&nbsp;// Blue<br>
+                }
+            </div>
+        </div>
+
+        <button id="executeButton">Exécuter</button>
+        <img id="outputImage" />
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

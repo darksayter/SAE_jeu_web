@@ -1,0 +1,19 @@
+#image-grid {
+    position: relative;
+    width: 900px;
+    height: 600px;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+}
+
+#image-grid div {
+    cursor: pointer;
+    transition: transform 0.3s ease, z-index 0.3s ease;
+}
+
+#image-grid div.enlarged {
+    transform: scale(10);
+    z-index: 10;
+}
