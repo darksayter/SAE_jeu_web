@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compilateur Python en ligne</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Exécuter du code Python en ligne</h1>
+        <textarea id="codeInput" rows="10" cols="50" placeholder="Entrez votre code Python ici..."></textarea>
+        <br>
+        <button onclick="sendCode()">Exécuter le code</button>
+        <h3>Sortie :</h3>
+        <pre id="output"></pre>
+    </div>
+
+    <script>
+        function sendCode() {
+            const code = document.getElementById('codeInput').value;
+            fetch('/execute', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ code: code })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('output').textContent = "Sortie:\n" + data.output + "\nErreur:\n" + data.error;
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                document.getElementById('output').textContent = "Erreur lors de l'exécution.";
+            });
+        }
+    </script>
+</body>
+</html>
