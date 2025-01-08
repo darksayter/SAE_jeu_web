@@ -1,0 +1,201 @@
+@font-face {
+    font-family: 'FacultyGlyphic';
+    src: url('../FONTS/FacultyGlyphic-Regular.woff2') format('woff2'),
+         url('../FONTS/FacultyGlyphic-Regular.ttf') format('truetype');
+}
+
+/* PAGE VITRINE */
+/* Styles spécifiques à la page vitrine */
+.vitrine-content {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px;
+    background: #559A99;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease-out;
+}
+
+.vitrine-title {
+    text-align: center;
+    font-size: 3em;
+    color: #B2FCD4;
+    animation: slideInTop 1.2s ease-in-out;
+}
+
+.vitrine-subtitle {
+    font-size: 2em;
+    margin-top: 30px;
+    border-bottom: 2px solid #B2FCD4;
+    display: inline-block;
+    color: #B2FCD4;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+.vitrine-paragraph {
+    font-size: 1.3em;
+    line-height: 1.8;
+    color: #B2FCD4;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+/* Machine à écrire pour le premier paragraphe sans curseur */
+.vitrine-paragraphy {
+    font-size: 1.3em;
+    overflow: hidden;                   /* Cache tout ce qui dépasse */
+    width: 0;                            /* Commence avec une largeur nulle */
+    animation: typing 5s steps(50) 1s forwards; /* Animation pour le texte */
+    white-space: normal;                 /* Permet au texte de se mettre à la ligne normalement */
+    word-wrap: break-word;               /* Permet de couper les mots trop longs qui débordent */
+}
+
+/* Animation pour faire apparaître le texte avec l'effet machine à écrire */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Liste */
+.vitrine-list {
+    margin-left: 20px;
+    padding-left: 0;
+    list-style-type: disc;
+}
+
+.vitrine-list-item {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #B2FCD4;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+/* Lien personnalisé pour SAE-crypto_web - R&MI */
+.vitrine-link {
+    color: #2E5E73;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.vitrine-link:hover {
+    color: #fff !important;
+    text-decoration: underline;
+}
+
+/* Tableau de l'équipe */
+.vitrine-team-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.vitrine-team-table th,
+.vitrine-team-table td {
+    padding: 15px 20px;
+    border: 1px solid #B2FCD4;
+    text-align: left;
+    color: #B2FCD4;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+}
+
+.vitrine-team-table th {
+    background-color: #40819F;
+    color: #B2FCD4;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.vitrine-team-table tr:nth-child(even) {
+    background-color: rgba(176, 240, 222, 0.1);
+}
+
+.vitrine-team-table tr:hover {
+    background-color: rgba(64, 129, 159, 0.8);
+}
+
+.vitrine-team-table tr:hover th,
+.vitrine-team-table tr:hover td {
+    color: #fff !important;
+}
+
+/* Séparateur hr */
+.vitrine-separator {
+    border: none;
+    height: 2px;
+    background-color: #333954;
+    margin: 20px 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInTop {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Application à vitrine-title */
+.vitrine-title {
+    text-align: center;
+    font-size: 3em;
+    color: #B2FCD4;
+    animation: slideInTop 1.2s ease-in-out, blink 1.5s infinite;
+}
+
+/* Corps du site */
+body {
+    background-color: #333954;
+    font-family: Arial, sans-serif;
+    font-family: 'FacultyGlyphic'; 
+}
+
