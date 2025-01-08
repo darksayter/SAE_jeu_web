@@ -1,0 +1,902 @@
+@font-face {
+    font-family: 'digital_7';
+    src: url('../FONTS/digital-7.woff2') format('woff2'),
+         url('../FONTS/digital-7.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'FacultyGlyphic';
+    src: url('../FONTS/FacultyGlyphic-Regular.woff2') format('woff2'),
+         url('../FONTS/FacultyGlyphic-Regular.ttf') format('truetype');
+}
+
+/* HEADER */
+header {
+    font-family: 'FacultyGlyphic';
+    background-color: #40819F;
+    color: #B2FCD4;
+    padding: 5px 5px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+/* Wrapper pour le logo et le menu */
+.header_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* LOGO */
+.header_logo {
+    flex-shrink: 0;
+    margin-left: 20px;
+}
+
+.header_logo img {
+    height: 150px;
+    width: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.header_logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Profile Image */
+.header_profile {
+    margin-left: auto;
+    position: relative; /* Positionner le menu déroulant par rapport à l'image */
+    margin-right: 20px;
+}
+
+.header_profile img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border: 3px solid #B2FCD4;
+    border-radius: 50%;
+}
+
+.header_profile img:hover {
+    transform: scale(1.1);
+}
+
+/* Profile Dropdown Menu */
+.profile_dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Menu */
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    top: 60px; /* Ajustez la position sous l'image */
+    right: 0; /* Aligné à droite par rapport à l'image */
+    background-color: #559A99;
+    border: 1px solid #B2FCD4;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    z-index: 1000;
+    min-width: 200px; /* Augmenter la largeur pour agrandir le menu */
+}
+
+/* Liens du menu déroulant */
+.dropdown_menu a {
+    display: block;
+    padding: 15px 20px; /* Augmenter le padding pour espacer les éléments */
+    text-decoration: none;
+    color: #B2FCD4;
+    font-size: 16px; /* Augmenter la taille du texte */
+    transition: background-color 0.2s;
+}
+
+/* Effet hover sur les liens */
+.dropdown_menu a:hover {
+    background-color: #477a79;
+    color: white;
+}
+
+/* Affichage du menu au survol */
+.profile_dropdown:hover .dropdown_menu {
+    display: block;
+}
+
+.form-group {
+    position: relative;
+}
+
+#toggle-password {
+    position: absolute;
+    right: -10px;
+    top: 70%;
+    transform: translateY(-50%);
+}
+
+
+/* MENU */
+.principale {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.principale ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Contrôle direct de l'espacement */
+}
+
+.principale li {
+    margin: 0 15px;
+}
+
+.principale a {
+    text-decoration: none;
+    color: #B2FCD4;
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.principale li:hover > a {
+    color: #FFFFFF;
+}
+
+/* BODY */
+body {
+    background-color: #333954;
+    color: #B2FCD4;
+    font-family: 'FacultyGlyphic';
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+}
+
+/* SECTION PRINCIPALE */
+.content {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* TITRE */
+.main-title {
+    font-size: 5rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+/* DESCRIPTION */
+.description {
+    font-size: 1.5rem;
+    color: #B2FCD4;
+    margin-bottom: 40px;
+}
+
+/* CONTAINER DES BOUTONS */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* RANGÉES DE BOUTONS */
+.button-container .row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* BOUTONS */
+.custom-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #559A99;
+    color: #B2FCD4;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+/* EFFET AU SURVOL */
+.custom-button:hover {
+    background-color: #40819F;
+}
+
+/*Page classement avec le podium */
+.podium {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* Couleur de fond pour les étapes du podium */
+.podium-step {
+    background-color: #333954;
+    color: #B2FCD4;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-top: auto;
+}
+
+.podium-item {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #559A99;
+    color: #B2FCD4;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.podium-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+    color: white;
+    background-color: #40819F;
+}
+
+.podium-item .profile-pic {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 10px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid #B2FCD4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.podium-item .profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.podium-item .username {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    min-height: 20px;
+}
+
+/* Spécificités des places */
+.podium-item.first {
+    height: 300px;
+}
+
+.podium-item.second {
+    height: 270px;
+}
+
+.podium-item.third {
+    height: 250px;
+}
+
+/* Classement de l'utilisateur connecté */
+.user-ranking {
+    margin-top: 40px;
+    background-color: #559A99;
+    padding: 20px;
+    border-radius: 10px;
+    display: block; /* Change à block pour qu'il occupe toute la largeur possible */
+    width: fit-content; /* Assure que la largeur s'adapte à son contenu */
+    margin-left: auto; /* Centrage horizontal automatique */
+    margin-right: auto; /* Centrage horizontal automatique */
+    text-align: center; /* Centre le contenu textuel à l'intérieur */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Ajout d'une transition pour l'agrandissement et le changement de couleur */
+}
+
+.user-ranking:hover {
+    transform: scale(1.05); /* Agrandissement léger au survol */
+    background-color: #40819F; /* Changement de couleur du fond au survol */
+}
+
+/* Conteneur du rang de l'utilisateur */
+.user-rank {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.3s ease; /* Transition pour changer la couleur du texte */
+}
+
+.user-rank:hover {
+    color: #FFFFFF; /* Changer la couleur du texte en blanc au survol */
+}
+
+/* Style de la photo de profil */
+.user-rank .profile-pic {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    transition: transform 0.3s ease; /* Transition pour agrandir la photo de profil */
+}
+
+/* Image de profil dans le cercle */
+.user-rank .profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #B2FCD4;
+}
+
+/* Nom de l'utilisateur */
+.user-rank .username {
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease; /* Transition pour le changement de couleur du texte */
+}
+
+.user-rank:hover .username {
+    color: #FFFFFF; /* Change le texte du nom en blanc au survol */
+}
+
+/* Position de l'utilisateur */
+.user-rank .user-step {
+    background-color: #333954;
+    color: #B2FCD4;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 15px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition pour le changement de couleur du fond et du texte */
+}
+
+/* Classement général */
+.other-participants {
+    margin-top: 30px;
+}
+
+.other-participants h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* Liste des participants */
+.other-participants ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+.other-participants li {
+    background-color: #559A99; /* Fond de chaque ligne */
+    color: #B2FCD4;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre pour chaque ligne */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet au survol */
+.other-participants li:hover {
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* Ombre renforcée */
+    background-color: #40819F;
+    color: white;
+}
+
+/* Style du numéro du classement */
+.other-participants li .rank-number {
+    background-color: #333954; /* Fond pour le numéro */
+    color: #B2FCD4;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-radius: 50%; /* Pour donner une forme circulaire */
+    min-width: 40px; /* Largeur minimale pour le numéro */
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Nom du participant */
+.other-participants li .participant-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Exemple de classement pour chaque participant */
+.other-participants li .rank-number {
+    margin-right: 15px; /* Espacement entre le numéro et le nom */
+}
+
+.other-participants-under {
+	display: flex;
+    align-items: center; /* Aligne verticalement les enfants */
+    gap: 15px; /* Espacement entre le numéro et le nom */
+    width: 100%
+}
+
+/* Style du numéro du classement */
+.other-participants-step {
+    background-color: #333954; /* Fond pour le numéro */
+    color: #B2FCD4; /* Couleur du texte */
+    padding: 5px 10px; /* Réduction de l'espacement interne */
+    font-weight: bold;
+    font-size: 1.2rem; /* Réduction de la taille du texte */
+    border-radius: 8px; /* Bords légèrement arrondis */
+    min-width: 40px; /* Largeur minimale ajustée */
+    height: 40px; /* Hauteur ajustée */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Nom du participant */
+.username {
+    font-size: 1.2rem;
+    font-weight: bold;
+    flex: 1; /* Permet au nom d'occuper tout l'espace restant */
+    text-align: left; /* Alignement à gauche pour une bonne lisibilité */
+}
+
+/* FOOTER */
+footer {
+    background-color: #40819F;
+    color: #B2FCD4;
+    padding: 20px 20px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 1.5rem;
+    font-family: 'FacultyGlyphic';
+}
+
+/* Footer Wrapper */
+.footer_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Footer Logo */
+.footer_logo {
+    flex-shrink: 0;
+    position: absolute;
+    left: 0;
+    margin-left: 40px;
+}
+
+.footer_logo img {
+    height: 150px;
+    width: auto;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.footer_logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Footer Links */
+.footer_links {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer_links a {
+    color: #B2FCD4;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer_links a:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+/* FORMULAIRE */
+.form {
+    background-color: #40819F; 
+    color: #B2FCD4; 
+    padding: 40px; 
+    border-radius: 15px; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+    width: 400px;
+    margin: auto; 
+}
+
+.form label {
+    font-size: 1.2rem; 
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'FacultyGlyphic';
+}
+
+.form .input {
+    width: 100%;
+    padding: 10px 15px;
+    border: none; 
+    border-radius: 10px; 
+    background-color: #333954; 
+    color: #B2FCD4; 
+    font-size: 1rem;
+    font-family: 'FacultyGlyphic'; 
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.3); 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form .input:focus {
+    outline: none; 
+    background-color: #559A99; 
+    box-shadow: inset 0px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.button-container .submit {
+    width: 100%;
+    padding: 15px; 
+    background-color: #559A99;
+    color: #B2FCD4; 
+    border: none; 
+    border-radius: 10px; 
+    font-size: 1.2rem; 
+    font-weight: bold;
+    font-family: 'FacultyGlyphic'; 
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.button-container .submit:hover {
+    background-color: #40819F; 
+    transform: scale(1.05); 
+}
+
+.avatar-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.avatar-preview {
+    margin: auto;
+    width: 120px; /* Taille du cercle */
+    height: 120px;
+    border-radius: 50%; /* Forme ronde */
+    overflow: hidden;
+    background-color: #333954; /* Fond */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Ombre */
+}
+
+.avatar-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajuste l'image */
+}
+
+.avatar-selector button {
+    background: none;
+    border: none;
+    color: #B2FCD4;
+    font-size: 1.5rem;
+    font-family: 'FacultyGlyphic'; /* Police définie */
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.avatar-selector button:hover {
+    color: #FFFFFF; /* Couleur au survol */
+    transform: scale(1.1); /* Agrandissement léger */
+}
+
+/* PROFIL */ 
+
+/* Carte de profil principale */
+.profile-card {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #559A99; /* Couleur de fond */
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    color: #B2FCD4;
+    font-family: 'FacultyGlyphic', sans-serif;
+}
+
+.profile-card:hover {
+    background-color: #40819F; 
+    transition: background-color 0.3s ease; 
+}
+
+/* Partie gauche: photo de profil et nom */
+.profile-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+/* Cercle pour l'image de profil */
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border: 3px solid #B2FCD4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333954;
+    font-size: 14px;
+    color: #B2FCD4;
+    font-weight: bold;
+}
+
+.profile-picture img {
+    width: 100px; 
+    height: 100px; 
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Nom */
+.profile-name {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Partie droite: informations */
+.profile-right {
+    font-size : 1.5rem;
+    display: flex;
+    flex-direction: column;
+    margin-left : 100px;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+/* Style pour les lignes d'information */
+.profile-info {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/*Style pour niveau 1*/
+#image-grid {
+    margin: auto;
+    position: relative;
+    width: 900px;
+    height: 600px;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+}
+
+#image-grid div {
+    cursor: pointer;
+    transition: transform 0.3s ease, z-index 0.3s ease;
+}
+
+#image-grid div.enlarged {
+    transform: scale(10);
+    z-index: 10;
+}
+
+/* Page Mentions légales */
+.contenu-mention-legale {
+    background-color: #559A99; 
+    color: #B2FCD4; 
+    text-align: center;
+    padding: 20px; 
+    border-radius: 10px; 
+    max-width: 800px; 
+    margin: 0 auto;
+}
+
+/* Style pour les éléments <li> */
+.contenu-mention-legale li {
+    list-style-type: none; 
+    margin: 10px 0; 
+}
+
+/* Container du formulaire */
+.form-container {
+    background-color: #559A99;
+    color: #B2FCD4;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    margin: 100px auto;
+    text-align: center;
+}
+
+/* Titre du formulaire */
+.form-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Champs de formulaire */
+.form-group {
+	margin-left : -15px ;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #333954;
+    color: #B2FCD4;
+    font-size: 1rem;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-field:focus {
+    outline: none;
+    background-color: #559A99;
+    box-shadow: inset 0px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Bouton de soumission */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #40819F;
+    color: #B2FCD4;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #333954;
+    transform: scale(1.05);
+}
+
+/* Lien vers l'inscription */
+.signup-link {
+    display: block;
+    margin-top: 20px;
+    color: #B2FCD4;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-link:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+/* Message d'erreur */
+.error-message {
+    color: #ff4d4d;
+    background-color: rgba(255, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Page Chapitre */
+
+/* Chapitre Container */
+.chapitre-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Chapitre Card */
+.chapitre-card {
+    background-color: #559A99;
+    border: 1px solid #B2FCD4;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    width: 100%; /* Prendre toute la largeur disponible */
+    max-width: 350px; /* Limiter la largeur des cartes */
+    text-align: center; /* Centrer le texte dans les cartes */
+}
+
+/* Effet au survol des chapitres */
+.chapitre-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Titre et Description du Chapitre */
+.chapitre-card h3 {
+    font-size: 1.5rem;
+    color: #B2FCD4;
+    margin-bottom: 10px;
+}
+
+.chapitre-description {
+    font-size: 1rem;
+    color: #B2FCD4;
+    margin-bottom: 20px;
+}
+
+/* Bouton Jouer */
+.jouer-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #40819F; /* Couleur différente pour le bouton Jouer */
+    color: #B2FCD4;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Changement de couleur au survol du bouton Jouer */
+.jouer-btn:hover {
+    background-color: #346075; /* Couleur plus foncée au survol */
+    color: white;
+}
+
+/* Chapitre 5 qui prend toute la largeur */
+.chapitre-container > .chapitre-card:nth-child(5) {
+    /* Enlève la règle max-width pour avoir la même largeur que les autres chapitres */
+    width: 100%; /* Chapitre 5 prend toute la largeur, mais avec la même taille que les autres */
+    max-width: 350px; /* Limite la largeur du chapitre 5 comme les autres */
+}
