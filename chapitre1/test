@@ -1,0 +1,125 @@
+<?php
+    include '../../header_e.php';
+?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Énigme Mathématique - Cadenas Unique</title>
+    <link rel="stylesheet" type="text/css" href="../../../assets/CSS/style.css" />
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px;
+        }
+        .roulette {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            width: 80px;
+        }
+        .number {
+            font-size: 40px;
+            margin: 20px 0;
+        }
+        .arrow {
+            cursor: pointer;
+            font-size: 30px;
+            user-select: none;
+        }
+        .submit-btn {
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h2 style="text-align: center; margin-top: 50px;">Énigme Mathématique - Trouvez la combinaison unique</h2>
+
+<p style="text-align: center;">La combinaison du cadenas suit les règles suivantes :<br>
+1. La somme de tous les chiffres doit être égale à 11.<br>
+2. Mon troisième chiffre est le double du premier.<br>
+3. Mon deuxième chiffre est le triple du quatrième.<br><br>
+Trouvez la bonne combinaison !</p>
+
+<div class="container">
+    <div class="roulette">
+        <div class="arrow" onclick="changeNumber(0, 1)">▲</div>
+        <div class="number" id="num0">0</div>
+        <div class="arrow" onclick="changeNumber(0, -1)">▼</div>
+    </div>
+    <div class="roulette">
+        <div class="arrow" onclick="changeNumber(1, 1)">▲</div>
+        <div class="number" id="num1">0</div>
+        <div class="arrow" onclick="changeNumber(1, -1)">▼</div>
+    </div>
+    <div class="roulette">
+        <div class="arrow" onclick="changeNumber(2, 1)">▲</div>
+        <div class="number" id="num2">0</div>
+        <div class="arrow" onclick="changeNumber(2, -1)">▼</div>
+    </div>
+    <div class="roulette">
+        <div class="arrow" onclick="changeNumber(3, 1)">▲</div>
+        <div class="number" id="num3">0</div>
+        <div class="arrow" onclick="changeNumber(3, -1)">▼</div>
+    </div>
+</div>
+
+<button class="submit-btn" onclick="checkCombination()">Soumettre</button>
+
+<script>
+    function changeNumber(index, direction) {
+        const numberElement = document.getElementById('num' + index);
+        let currentNumber = parseInt(numberElement.innerText);
+        currentNumber = (currentNumber + direction + 10) % 10;
+        numberElement.innerText = currentNumber;
+    }
+
+    function checkCombination() {
+        const a = parseInt(document.getElementById('num0').innerText);
+        const b = parseInt(document.getElementById('num1').innerText);
+        const c = parseInt(document.getElementById('num2').innerText);
+        const d = parseInt(document.getElementById('num3').innerText);
+
+        if (a + b + c + d === 11 && 
+            c === (2* a) && 
+            b === (3 * d) ){
+                alert("Bravo ! Vous avez ouvert le cadenas avec la bonne combinaison.");
+                try {
+                    $con = new PDO($dsn);
+                    $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            
+                    // Préparer la requête de mise à jour
+                    $stmt = $con->prepare('INSERT INTO niveaucomplete (id_utilisateur, id_niveau, score) VALUES (:id_user, 2, 500)');
+                    $stmt->bindParam(':id_user', $id_user);
+            
+                    // Exécuter la requête
+                    $stmt->execute();
+            
+                    echo "niveau mis à jour avec succès.";
+                } catch (PDOException $e) {
+                    echo 'Erreur de connexion : ' . $e->getMessage();
+                }
+        } else {
+            alert("Dommage, la combinaison est incorrecte. Essayez encore !");
+        }
+    }
+</script>
+
+</body>
+</html>
+<?php
+    include '../../footer_e.php';
+?>

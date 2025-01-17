@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  .container {
+    margin-top: 50px;
+  }
+  
+  .puzzle-container {
+    display: grid;
+    grid-template-columns: repeat(4, 200px); /* 4 colonnes de 100px */
+    grid-gap: 5px;
+    justify-content: center;
+  }
+  
+  .puzzle-piece {
+    width: 200px;
+    height: 100px;
+    background-color: #ccc;
+    border: 2px solid #333;
+    display: inline-block;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  #enigme-container {
+    margin-top: 30px;
+  }
+  
+  input {
+    padding: 5px;
+    margin-top: 10px;
+  }
+  
+  button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* La classe pour les pièces débloquées, elle va permettre de changer l'apparence de la case une fois débloquée */
+  .puzzle-piece {
+    width: 200px;
+    height: 100px;
+    background-color: #ccc;  /* Couleur grise pour les pièces au début */
+    border: 2px solid #333;
+    display: inline-block;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .puzzle-piece.degri {
+    background-color: transparent; /* Une fois dégrisée, la pièce devient transparente */
+    border: 2px solid #4CAF50; /* Bordure verte ou toute couleur que tu préfères */
+    cursor: pointer;
+  }
+  

@@ -1,45 +1,20 @@
-from flask import Flask, request, jsonify
-import subprocess
-import os
-import tempfile
+from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return open('templates/index.html').read()
+    return render_template('index.html')  # Remplacez 'index.html' par le nom de votre fichier HTML
 
-@app.route('/execute', methods=['POST'])
-def execute_code():
+@app.route('/submit', methods=['POST'])
+def submit_data():
     data = request.get_json()
-    code = data.get('code')
+    user_input = data.get('userInput')
 
-    # Exécuter le code et récupérer la sortie
-    output, error = run_code(code)
+    with open('output.txt', 'a') as f:
+        f.write(user_input + '\n')
 
-    return jsonify({"output": output, "error": error})
-
-def run_code(code):
-    try:
-        # Créer un fichier temporaire pour stocker le code Python
-        with tempfile.NamedTemporaryFile(suffix=".py", delete=False) as temp_file:
-            temp_file.write(code.encode())
-            temp_file.close()
-
-            # Exécuter le code via subprocess
-            result = subprocess.run(
-                ['python3', temp_file.name],
-                capture_output=True, text=True, timeout=5
-            )
-
-            # Supprimer le fichier temporaire après exécution
-            os.remove(temp_file.name)
-
-            return result.stdout, result.stderr
-    except subprocess.TimeoutExpired:
-        return "Le code a pris trop de temps à s'exécuter.", ""
-    except Exception as e:
-        return f"Erreur lors de l'exécution: {str(e)}", ""
+    return jsonify({"message": "Données reçues et enregistrées"}), 200
 
 if __name__ == '__main__':
     app.run(debug=True)

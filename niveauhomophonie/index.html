@@ -1,62 +1,39 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exécuter du Python en ligne avec Pyodide</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Boîte de Dialogue</title>
 </head>
-<body>
-    <div class="container">
-        <h1>Exécuter du code Python en ligne</h1>
-        <textarea id="codeInput" rows="10" cols="50" placeholder="Entrez votre code Python ici..."></textarea>
-        <br>
-        <button onclick="executePythonCode()">Exécuter le code</button>
-        <h3>Sortie :</h3>
-        <pre id="output"></pre>
-    </div>
-
-    <!-- Charger Pyodide -->
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.0/full/pyodide.js"></script>
+<body>0
+    <h1>Boîte de Dialogue</h1>
+    <form id="dialog-form">
+        <label for="userInput">Votre texte :</label><br>
+        <textarea id="userInput" name="userInput" rows="4" cols="50"></textarea><br><br>
+        <button type="submit">Envoyer</button>
+    </form>
 
     <script>
-        let pyodide;
+        document.getElementById('dialog-form').addEventListener('submit', async (e) => {
+            e.preventDefault(); // Empêche le rechargement de la page
+            
+            const userInput = document.getElementById('userInput').value;
+            
+            // Envoie les données au serveur Python
+            const response = await fetch('/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ userInput })
+            });
 
-        // Fonction pour charger Pyodide
-        async function loadPyodideInstance() {
-            try {
-                console.log("Chargement de Pyodide...");
-                pyodide = await loadPyodide();
-                console.log("Pyodide chargé avec succès!");
-                document.getElementById('loadingMessage').style.display = 'none'; // Cacher le message de chargement
-            } catch (error) {
-                console.error("Erreur lors du chargement de Pyodide:", error);
-                alert("Erreur lors du chargement de Pyodide. Vérifiez votre connexion ou essayez de recharger la page.");
+            if (response.ok) {
+                alert("Données envoyées avec succès !");
+            } else {
+                alert("Erreur lors de l'envoi des données.");
             }
-        }
-
-        // Fonction pour exécuter le code Python
-        async function executePythonCode() {
-            const code = document.getElementById('codeInput').value;
-            const outputElement = document.getElementById('output');
-
-            // Vérifier si Pyodide est bien chargé
-            if (!pyodide) {
-                outputElement.textContent = "Pyodide n'est pas encore chargé. Veuillez patienter.";
-                return;
-            }
-
-            try {
-                // Exécuter le code Python
-                const result = await pyodide.runPythonAsync(code);
-                outputElement.textContent = "Sortie:\n" + result;
-            } catch (error) {
-                outputElement.textContent = "Erreur:\n" + error;
-            }
-        }
-
-        // Charger Pyodide dès que possible
-        loadPyodideInstance();
+        });
     </script>
 </body>
 </html>

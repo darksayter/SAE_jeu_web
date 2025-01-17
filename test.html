@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal - Le Duel Final</title>
+    <style>
+        /* Corps de la page */
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #f3f3f3;
+            color: #222;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Conteneur principal */
+        .newspaper {
+            max-width: 1100px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+
+        /* Titre principal */
+        .headline {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #000;
+            padding-bottom: 10px;
+        }
+
+        /* Sous-titre */
+        .subheadline {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        /* Mise en page à deux colonnes */
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+        }
+
+        /* Articles */
+        .article {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        /* Titres d'articles */
+        .article-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #444;
+            padding-bottom: 5px;
+        }
+
+        /* Encadré spécial */
+        .highlight {
+            background-color: #f9f7d9;
+            border: 2px solid #e2d780;
+            padding: 10px;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        /* Pied de page */
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="newspaper">
+        <div class="headline">Le Duel Final au Pied du Colisée</div>
+        <div class="subheadline">Unit S démantèle un réseau criminel international</div>
+        
+        <div class="content">
+            <!-- Première colonne -->
+            <div class="article">
+                <div class="article-title">Le Puzzle Déchiffré</div>
+                <p>
+                    D’après les informations dévoilées dans une série de courriels interceptés par Unit S, 
+                    l’organisation criminelle utilisait une méthode aussi ingénieuse qu’audacieuse pour recruter 
+                    ses membres. Profitant de leur position en tant que professeurs d’université, les leaders du 
+                    groupe publiaient des annonces sous couvert de projets académiques.
+                </p>
+                <p>
+                    Ces annonces, qui invitaient des étudiants prometteurs à collaborer sur des sites dédiés aux 
+                    énigmes cryptographiques, leur permettaient d’identifier des talents exceptionnels en informatique. 
+                    Une fois les candidats sélectionnés, ils étaient invités à rejoindre le groupe sans qu’ils en comprennent 
+                    réellement la nature criminelle.
+                </p>
+            </div>
+            
+            <div class="article">
+                <div class="article-title">La Confrontation Finale</div>
+                <p>
+                    Grâce aux e-mails interceptés, Unit S a réussi à localiser le quartier général de l’organisation, 
+                    situé à quelques mètres du Colisée, dans un bâtiment anodin. Ce fut là que l’affrontement final eut lieu. 
+                    Les membres de l’organisation, pris de court, ont tenté de détruire leurs preuves et de fuir, 
+                    mais il était déjà trop tard.
+                </p>
+                <p class="highlight">
+                    Le Colisée, témoin de nombreux affrontements au cours des siècles, a vu tomber cette fois-ci 
+                    une organisation qui semblait intouchable.
+                </p>
+            </div>
+        </div>
+        
+        <div class="content">
+            <!-- Deuxième colonne -->
+            <div class="article">
+                <div class="article-title">Une Trahison Salutaire</div>
+                <p>
+                    Parmi les révélations majeures de l’affaire, l’identité d’une collaboratrice devenue informatrice 
+                    a particulièrement retenu l’attention. Anne Pacou, professeure de mathématiques dans la même 
+                    université que les membres fondateurs, avait, elle aussi, été impliquée dans l’organisation. Cependant, 
+                    elle s’était rapidement éloignée de ses confrères.
+                </p>
+                <p>
+                    Son aide précieuse a permis d’accélérer l’enquête et de mettre en place le coup de filet final. 
+                    En raison de sa coopération, Anne Pacou a bénéficié d’une réduction de peine : elle a été condamnée 
+                    à du sursis, assorti d’une amende conséquente.
+                </p>
+            </div>
+
+            <div class="article">
+                <div class="article-title">Une Justice Exemplaire</div>
+                <p>
+                    Le procès des criminels, dont les noms sont encore sous scellé pour des raisons de sécurité, a déjà pris 
+                    une ampleur internationale. Ce sera l’occasion de dévoiler au grand jour les ramifications de leurs 
+                    actes. Les chefs de l’organisation risquent la peine maximale, conformément aux lois italiennes et internationales.
+                </p>
+                <p>
+                    Quant aux membres d’Unit S, leur travail ne passe pas inaperçu. Ils ont été salués pour leur bravoure 
+                    et leur ingéniosité. Leur anonymat leur permettra de poursuivre leurs enquêtes sur d’éventuelles ramifications encore actives.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2025, Le Journal des Enigmes. Tous droits réservés.
+    </footer>
+</body>
+</html>
